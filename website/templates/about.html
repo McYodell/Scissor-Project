@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}About{% endblock title %}
+
+{% block content %}
+<section class="container">
+  {% if current_user.is_authenticated %}
+  <h2>Welcome to Kutly, {{ current_user.username }}!</h2>
+  {% else %}
+  <h2>Welcome to Kutly!</h2>
+  {% endif %}
+    
+  <h3>"Welcome to Kutly – Your Ultimate Link Shortening and Analytics Solution!"</h3>
+  
+  <p>At Kutly, we understand the importance of streamlined online experiences. We believe that sharing links should be simple, efficient, and insightful. That's why we've crafted a powerful link shortening service that goes beyond just reducing the length of your URLs – we provide you with the tools to understand your audience, enhance your online presence, and make informed decisions.</p>
+    
+  <p>Our Mission<br>Our mission at Kutly is to empower individuals, businesses, and creators to make the most out of their online links. Whether you're sharing a blog post, promoting a product, or connecting with your audience through social media, we're here to optimize your link-sharing process. We aim to simplify complex URLs and provide valuable insights to help you make data-driven choices.</p> 
+    
+  <p>What Sets Us Apart<br>
+    Kutly isn't just another link shortening service – we're a comprehensive solution designed with you in mind. <br>Here's what sets us apart:<br>
+    
+    <p>Link Shortening: Our cutting-edge technology ensures that your long, cumbersome URLs are transformed into sleek, manageable links. Say goodbye to unwieldy addresses and hello to clean, professional links.</p>
+    
+    <p>Analytics and Insights: We go beyond just shortening links. With our robust analytics tools, you can track click-through rates, and more. Gain a deeper understanding of your audience and tailor your strategies accordingly.</p>
+    
+  <p>Customization: Personalize your shortened links with branded domains to reinforce your identity and increase click-through rates. Choose from a range of customization options to match your unique style.</p>
+    
+    <p>User-Friendly Interface: Our intuitive interface is designed to cater to all levels of users. Whether you're a seasoned marketer or just starting out, Kutly's user-friendly platform makes link management a breeze.</p>
+
+  <p>How It Works<br>
+    Using Kutly is as easy as 1-2-3:<br>
+  <p>Shorten: <br>Paste your long URL into our interface, and we'll provide you with a shortened link in seconds.</p>
+  <p>Customize (Optional): <br>If you want to add a personal touch, customize the shortened link.</p>
+  <p>Analyze: <br>Gain valuable insights into your link's performance. Track clicks, and more to make informed decisions.</p>
+</section>
+{% endblock content %}
