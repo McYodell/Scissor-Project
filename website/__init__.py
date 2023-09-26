@@ -14,13 +14,15 @@ load_dotenv()
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
 
-uri = os.environ.get('DATABASE_URL')
-if uri.startswith('postgres://'):
-    uri = uri.replace('postgres://', 'postgresql://', 1)
+#uri = os.environ.get('DATABASE_URL')
+#if uri.startswith('postgres://'):
+    #uri = uri.replace('postgres://', 'postgresql://', 1)
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
     #os.path.join(base_dir, 'test.db')
-app.config['SQLALCHEMY_DATABASE_URI'] = uri
+#app.config['SQLALCHEMY_DATABASE_URI'] = uri
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+#postgres://scissor_project_user:QXVxaUGxbsPlTqaebWLpG7rLomwp0cmF@dpg-ck95d9v0vg2c7386nisg-a.oregon-postgres.render.com/scissor_project
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['CACHE_TYPE'] = 'SimpleCache'
